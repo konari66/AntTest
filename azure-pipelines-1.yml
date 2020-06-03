@@ -17,7 +17,7 @@ steps:
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
-    publishJUnitResults:true
+    publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
 - task: PublishBuildArtifacts@1
   inputs:
@@ -25,10 +25,3 @@ steps:
     ArtifactName: 'drop'
     publishLocation: 'Container'
     testResultsFiles: '**/TEST-*.xml'
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(Build.BinariesDirectory)'
-    includeRootFolder: true
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    replaceExistingArchive: true
