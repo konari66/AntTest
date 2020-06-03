@@ -19,10 +19,9 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
-
 - task: PublishBuildArtifacts@1
-      inputs:
-        PathtoPublish: '/home/vsts/work/1/s/dist'
+  inputs:
+        PathtoPublish: '/home/vsts/work/1/s/target'
         ArtifactName: 'drop'
         publishLocation: 'Container'
     
