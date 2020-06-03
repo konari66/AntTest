@@ -21,7 +21,7 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
 - task: PublishBuildArtifacts@1
   inputs:
-        PathtoPublish: '/home/vsts/work/1/s/target'
+        PathtoPublish: '/home/vsts/work/1/s/dist'
         ArtifactName: 'drop'
         publishLocation: 'Container'
     
