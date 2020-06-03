@@ -17,7 +17,9 @@ steps:
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
-    publishJUnitResults: - task: PublishBuildArtifacts@1
+    publishJUnitResults:true
+    testResultsFiles: '**/TEST-*.xml'
+- task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
